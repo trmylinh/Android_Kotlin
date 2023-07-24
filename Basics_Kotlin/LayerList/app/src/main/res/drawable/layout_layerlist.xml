@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--khoi hinh item 1-->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#4E888A" />
+        </shape>
+    </item>
+
+    <!--khoi hinh item 2-->
+    <item>
+        <shape android:shape="oval"
+            >
+            <solid android:color="#f77062" />
+            <size android:width="100dp" android:height="100dp"/>
+        </shape>
+    </item>
+
+    <!--khoi hinh item 3-->
+    <item
+        android:gravity="center"
+        >
+        <shape android:shape="oval">
+            <stroke
+                android:width="5dp"
+                android:color="#000" />
+            <size android:width="50dp" android:height="50dp"/>
+        </shape>
+    </item>
+</layer-list>
