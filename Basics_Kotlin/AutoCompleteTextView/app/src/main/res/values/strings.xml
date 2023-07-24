@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AutoCompleteTextView</string>
+    <string-array name="city">
+        <item>Ha Noi</item>
+        <item>Vinh Phuc</item>
+        <item>Thai Nguyen</item>
+        <item>Quang Ninh</item>
+        <item>Ha Nam</item>
+        <item>Nghe An</item>
+    </string-array>
+</resources>

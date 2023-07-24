@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--  solid: màu nền khối -->
+    <solid android:color="#88FF" />
+
+    <!--tô viền, nét đứt viền-->
+    <stroke
+        android:width="1dp"
+        android:color="#fff"/>
+
+    <!--size-->
+    <!--    <size android:width="50dp" android:height="50dp"/>-->
+
+    <!--bo góc-->
+    <corners android:radius="500dp" />
+
+    <!--padding: can le noi dung nam tren khoi shape-->
+    <padding android:top="10dp" />
+
+    <!--chuyen mau-->
+    <gradient
+        android:angle="45"
+        android:endColor="#c3cfe2"
+        android:startColor="#f5f7fa" />
+
+</shape>
