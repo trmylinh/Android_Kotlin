@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuIcon"
+        android:icon="@drawable/icon_more"
+        app:showAsAction="always"
+        android:title="">
+        <menu>
+            <item
+                android:id="@+id/menuHome"
+                android:icon="@drawable/icon_home"
+                android:title="Home" />
+            <item
+                android:id="@+id/menuExit"
+                android:icon="@drawable/icon_close"
+                android:title="Exit" />
+            <item
+                android:id="@+id/menuAdd"
+                android:icon="@drawable/icon_add"
+                android:title="Add" />
+        </menu>
+    </item>
+</menu>
