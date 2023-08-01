@@ -96,6 +96,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.lvFull.adapter = adapter
 
+        //click 1 item hien thi thong tin
+        binding.lvFull.setOnItemClickListener { adapterView, view, i, l ->
+            binding.edtUser.setText(rs.getString(1))
+            binding.edtEmail.setText(rs.getString(2))
+        }
+
         // btnViewAll
 
         binding.btnViewAll.setOnClickListener {
