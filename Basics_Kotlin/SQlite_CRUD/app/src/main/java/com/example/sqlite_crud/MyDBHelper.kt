@@ -9,7 +9,6 @@ class MyDBHelper(context: Context ): SQLiteOpenHelper(context, "sqlite_crud", nu
         p0?.execSQL("create table USER (_id integer primary key autoincrement, username text, email text)")
 
         p0?.execSQL("insert into USER(username, email) values ('mylinh', 'linh@gmail.com')")
-        p0?.execSQL("insert into USER(username, email) values ('duythai', 'thai@gmail.com')")
         p0?.execSQL("insert into USER(username, email) values ('haanh', 'anh@gmail.com')")
     }
 

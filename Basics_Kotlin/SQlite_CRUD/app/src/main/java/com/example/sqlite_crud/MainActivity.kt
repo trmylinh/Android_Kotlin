@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
-                rs = db.rawQuery("select * from USER where username like '%${p0}' or email like '%${p0}", null)
+                rs = db.rawQuery("select * from USER where username like '%${p0}%' or email like '%${p0}%' ", null)
                 adapter.changeCursor(rs)
                 return true
             }
