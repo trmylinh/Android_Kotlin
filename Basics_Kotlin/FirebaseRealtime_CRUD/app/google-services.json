@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "468902202372",
+    "firebase_url": "https://fir-realtime-crud-94347-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fir-realtime-crud-94347",
+    "storage_bucket": "fir-realtime-crud-94347.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468902202372:android:5a7fe8925e4da7b4e47951",
+        "android_client_info": {
+          "package_name": "com.example.firebaserealtime_crud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "468902202372-n1r49gai70ktlm7pa3ghkto541m28vfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVonfUyE3EhfNXtEpjg0i6P0mU9oH90mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "468902202372-n1r49gai70ktlm7pa3ghkto541m28vfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,7 +13,7 @@ class Screen3 : AppCompatActivity() {
         binding = ActivityScreen3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // nhan du lieu tu Bundle Screen2
+        // nhan du lieu tu Bundle cua Screen2
         val intentGet = intent
 
         // lay bundle ra khoi Intent

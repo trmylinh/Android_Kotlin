@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.recycleView.layoutManager = GridLayoutManager(
             this,
             2,
-            GridLayoutManager.VERTICAL,
+            GridLayoutManager.VERTICA
             false
         )
 
