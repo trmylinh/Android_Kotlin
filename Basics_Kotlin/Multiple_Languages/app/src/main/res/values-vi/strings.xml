@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Multiple_Languages</string>
+    <string name="multipleLanguage">Đa ngôn ngữ</string>
+    <string name="btnChangeLanguage">Hiển thị tin nhắn</string>
+    <string name="toast">Tin nhắn thông báo</string>
+</resources>
