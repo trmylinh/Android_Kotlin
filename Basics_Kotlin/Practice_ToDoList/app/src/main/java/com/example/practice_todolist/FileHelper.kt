@@ -10,20 +10,35 @@ import java.io.ObjectOutputStream
 import java.util.Objects
 
 class FileHelper {
-    val FILE_NAME = "listinfo.dat"
+    private val FILE_NAME = "listinfo.dat"
 
     // ghi tep
-    fun writeData(item: ArrayList<String>, context: Context) {
-        val fileOutputStream: FileOutputStream =
-            context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE)
-        val objectOutputStream = ObjectOutputStream(fileOutputStream)
+    fun writeData(item: ArrayList<DataTask>, context: Context) {
+//        try{
+//            val fileOutputStream: FileOutputStream =
+//                context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE)
+//            val objectOutputStream = ObjectOutputStream(fileOutputStream)
+//            objectOutputStream.writeObject(item)
+//            objectOutputStream.close()
+//            fileOutputStream.close()
+//        }
+//        catch (e: Exception) {
+//            Log.e("error-write", e.message.toString())
+//        }
+        try {
+            context.openFileOutput(FILE_NAME, Context.MODE_PRIVATE).use { fileOutputStream ->
+                ObjectOutputStream(fileOutputStream).use { objectOutputStream ->
+                    objectOutputStream.writeObject(item)
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("FileHelper", "Error writing data: ${e.message}")
+        }
 
-        objectOutputStream.writeObject(item)
-        objectOutputStream.close()
     }
 
     // doc tep
-    fun readData(context: Context): ArrayList<String> {
+    fun readData(context: Context): ArrayList<DataTask> {
 //        val itemList: ArrayList<String> = try {
 //            val fileInputStream : FileInputStream = context.openFileInput(FILE_NAME)
 //            val objectInputStream = ObjectInputStream(fileInputStream)
@@ -31,24 +46,28 @@ class FileHelper {
 //
 //        } catch (e: FileNotFoundException){
 //            ArrayList()
+////            Log.e("FileHelper", "File not found: ${e.message}")
 //        }
 //        return itemList
-        val itemList: ArrayList<String> = ArrayList()
+
+        val itemList = ArrayList<DataTask>()
         try {
-            val fileInputStream: FileInputStream = context.openFileInput(FILE_NAME)
-            val objectInputStream = ObjectInputStream(fileInputStream)
-            val data = objectInputStream.readObject()
-            if (data is ArrayList<*>) {
-                for (item in data) {
-                    if (item is String) {
-                        itemList.add(item)
+            context.openFileInput(FILE_NAME).use { fileInputStream ->
+                ObjectInputStream(fileInputStream).use { objectInputStream ->
+                    val data = objectInputStream.readObject()
+                    if (data is ArrayList<*>) {
+                        for (item in data) {
+                            if (item is DataTask) {
+                                itemList.add(item)
+                            }
+                        }
                     }
                 }
             }
-            objectInputStream.close()
-            fileInputStream.close()
+        } catch (e: FileNotFoundException) {
+            Log.e("FileHelper", "File not found: ${e.message}")
         } catch (e: Exception) {
-            Log.e("error", e.message.toString())
+            Log.e("FileHelper", "Error reading data: ${e.message}")
         }
         return itemList
 
