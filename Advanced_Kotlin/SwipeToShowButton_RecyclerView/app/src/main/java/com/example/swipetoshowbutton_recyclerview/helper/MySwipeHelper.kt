@@ -20,7 +20,7 @@ abstract class MySwipeHelper(
 
     var buttonList: MutableList<MyButton>?=null
     private lateinit var gestureDetector: GestureDetector
-    private var swipePostion = -1
+    private var swipePosition = -1
     private var swipeThreshold = 0.5f
     private var buttonBuffer : MutableMap<Int, MutableList<MyButton>>
     private lateinit var removeQueue : LinkedList<Int>
@@ -39,9 +39,9 @@ abstract class MySwipeHelper(
     }
 
     private val onTouchListener = View.OnTouchListener { view, motionEvent ->
-        if(swipePostion < 0) return@OnTouchListener false
+        if(swipePosition < 0) return@OnTouchListener false
         val point = Point(motionEvent.rawX.toInt(), motionEvent.rawX.toInt())
-        val swipeViewHolder = recyclerView.findViewHolderForAdapterPosition(swipePostion)
+        val swipeViewHolder = recyclerView.findViewHolderForAdapterPosition(swipePosition)
         val swipeItem = swipeViewHolder!!.itemView
         val rect = Rect()
         swipeItem.getGlobalVisibleRect(rect)
@@ -53,8 +53,8 @@ abstract class MySwipeHelper(
                 gestureDetector.onTouchEvent((motionEvent))
             }
             else{
-                removeQueue.add(swipePostion)
-                swipePostion = -1
+                removeQueue.add(swipePosition)
+                swipePosition = -1
                 recoverSwipe()
             }
 
@@ -131,11 +131,11 @@ abstract class MySwipeHelper(
 
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
         val pos = viewHolder.adapterPosition
-        if(swipePostion != pos){
-            removeQueue.add(swipePostion)
-            swipePostion = pos
-            if(buttonBuffer.containsKey(swipePostion)){
-                buttonList = buttonBuffer[swipePostion]
+        if(swipePosition != pos){
+            removeQueue.add(swipePosition)
+            swipePosition = pos
+            if(buttonBuffer.containsKey(swipePosition)){
+                buttonList = buttonBuffer[swipePosition]
             }
             else{
                 buttonList!!.clear()
@@ -171,7 +171,7 @@ abstract class MySwipeHelper(
         var translationX: Float = dX
         val itemView = viewHolder.itemView
         if(pos < 0){
-            swipePostion = pos
+            swipePosition = pos
             return
         }
         if(actionState == ItemTouchHelper.ACTION_STATE_SWIPE){
